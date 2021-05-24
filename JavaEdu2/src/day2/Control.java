@@ -16,7 +16,7 @@ public class Control {
 			System.out.println("\n뭐 할래?");
 			System.out.println("[1. 추가]  [2. 수정] [3. 삭제] [4. 검색] [5. 종료]");
 			System.out.print("[입력] >>> ");
-			inputNum = scan.nextLine();
+			inputNum = scan.next();
 			
 				 if (inputNum.equals("1")) add();
 			else if (inputNum.equals("2")) update();
@@ -32,9 +32,9 @@ public class Control {
 	void add() {
 		System.out.println("추가할 문자 Type 선택");
 		System.out.println("[1. 영어]  [2. 한글]");
-		String inputNum = scan.nextLine(); 
+		String inputNum = scan.next(); 
 		System.out.print("추가할 문자를 입력하세요 : ");
-		String inputData = scan.nextLine(); 
+		String inputData = scan.next(); 
 		boolean check = checkCharType(inputNum, inputData);	
 		if(inputNum.equals("1") && check == true) {	//문자Type을 영어로 선택했고 입력된 문자가 알파벳일경우
 			engArr.add(inputData);
@@ -62,13 +62,13 @@ public class Control {
 		System.out.println();
 		System.out.println("수정할 문자 Type 선택");
 		System.out.println("[1. 영어]  [2. 한글]");
-		String inputNum = scan.nextLine(); 
+		String inputNum = scan.next(); 
 		
 		if(inputNum.equals("1") && engArr.size() == 0) {
 			System.out.println("빈 단어장입니다.");
 			return;
 		}
-		else if(inputNum.equals("2") && korArr.size() == 0) {
+		if(inputNum.equals("2") && korArr.size() == 0) {
 			System.out.println("빈 단어장입니다.");
 			return;
 		}
@@ -83,6 +83,7 @@ public class Control {
 			if(check) {
 				engArr.set(selNum - 1, newInputData);
 				System.out.println("영어 문자 ["+ newInputData + "]로 수정되었습니다\n");
+				return;
 			}
 			else {
 				System.out.println("선택한 문자Type과 입력한 문자형태가 불일치 합니다.\n");
@@ -95,6 +96,7 @@ public class Control {
 			if(check) {
 				korArr.set(selNum - 1, newInputData);
 				System.out.println("한글 문자 ["+ newInputData + "]로 수정되었습니다\n");
+				return;
 			}
 			else {
 				System.out.println("선택한 문자Type과 입력한 문자형태가 불일치 합니다.\n");
@@ -117,13 +119,13 @@ public class Control {
 		System.out.println();
 		System.out.println("삭제할 문자 Type 선택");
 		System.out.println("[1. 영어]  [2. 한글]");
-		String inputNum = scan.nextLine(); 
+		String inputNum = scan.next(); 
 		
 		if(inputNum.equals("1") && engArr.size() == 0) {
 			System.out.println("빈 단어장입니다.");
 			return;
 		}
-		else if(inputNum.equals("2") && korArr.size() == 0) {
+		if(inputNum.equals("2") && korArr.size() == 0) {
 			System.out.println("빈 단어장입니다.");
 			return;
 		}
@@ -133,15 +135,17 @@ public class Control {
 		if(inputNum.equals("1") && selNum <= engArr.size()){
 			System.out.println("영어 문자 [" + engArr.get(selNum - 1) + "] 가 삭제되었습니다.");
 			engArr.remove(selNum - 1);
+			return;
 		}
 		else if(inputNum.equals("2") && selNum <= korArr.size()){
 			System.out.println("한글 문자 [" + korArr.get(selNum - 1) + "] 가 삭제되었습니다.");
 			korArr.remove(selNum - 1);
+			return;
 		}
 		else {
 			System.out.println("존재하지 않는 번호입니다.");
 		}
-		
+	
 	}
 
 	

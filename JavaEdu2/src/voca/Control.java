@@ -1,4 +1,6 @@
-package day2;
+package voca;
+
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -6,12 +8,10 @@ public class Control {
 //	ArrayList<String> engArr = new ArrayList<>();
 //	ArrayList<String> korArr = new ArrayList<>();
 	ArrayList<Voca> vocaArr = new ArrayList<>();
-	
-	Voca v = new Voca();
 
 	public void showVoca() {
-		for (int i = 0; i < v.size(); i++) {
-			System.out.println(i + 1 + ". " + v.engArr.get(i) + " : " + v.korArr.get(i));
+		for (int i = 0; i < vocaArr.size(); i++) {
+			System.out.println(i + 1 + ". " + vocaArr.get(i).getEng() + " : " + vocaArr.get(i).getKor());
 		}
 	}
 
@@ -30,27 +30,36 @@ public class Control {
 			input = scan.nextLine();
 
 			if (input.equals("1")) {
-				System.out.println("추가할 영어/한글 입력");
-				v = new Voca(scan.nextLine(), scan.nextLine());
-				v.add();
+				System.out.println("추가할 영어 입력");
+				String eng = scan.nextLine();
+
+				System.out.println("추가할 한글 입력");
+				String kor = scan.nextLine();
+				
+				vocaArr.add(new Voca(eng, kor));
 				showVoca();
 				
 			} else if (input.equals("2")) {
 				showVoca();
 				System.out.println("몇 번 수정할래?");
 				input = scan.nextLine();
-				int tempInt = Integer.parseInt(input)-1;
-				System.out.println("수정할 영어/한글 입력");
-				v.update(tempInt, scan.nextLine(), scan.nextLine());
+				int tempInt = Integer.parseInt(input) - 1;
+				
+				Voca tempV = vocaArr.get(tempInt);
+				System.out.println("수정할 영어 입력");
+				tempV.setEng(scan.nextLine());
+				System.out.println("수정할 한글 입력");
+				tempV.setKor(scan.nextLine());
+				
 
 				
 			} else if (input.equals("3")) {
 				showVoca();
 				System.out.println("몇 번 삭제할래?");
 				input = scan.nextLine();
-				int tempInt = Integer.parseInt(input)-1;
-				v.remove(tempInt);
+				int tempInt = Integer.parseInt(input) - 1;
 
+				vocaArr.remove(tempInt);
 
 			} else if (input.equals("4")) {
 

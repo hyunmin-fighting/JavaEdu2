@@ -1,4 +1,4 @@
-package maze;
+package maze2;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -50,22 +50,27 @@ public class Control {
 		map[3][3].right = 1;
 		map[3][3].left = 1;
 		map[4][3].up = 3;
-		map[4][3].left = 1;
+		map[4][3].left = 4;
 		
 		//이벤트 세팅
 		map[4][0].evetType =1;
 		map[0][2].evetType =2;
 		map[4][2].evetType =3;
+		map[1][0].evetType = 5;
+		map[1][0].targetX = 2;
+		map[1][0].targetY = 2;
 		
-	
+		map[0][0].name ="서울";
+		map[0][0].price =1000;
 
 		Scanner scan = new Scanner(System.in);
-		Player p1 = new Player(2, 2);
-		p1.name ="개똥이";
-		Player p2 = new Player(2, 2);
-		p2.name ="소똥이";
-		player.add(p1);
-		player.add(p2);
+		for (int i = 0; i < 100; i++) {
+			Player p1 = new Player(2, 2);
+			p1.name ="개똥이 "+i;
+			player.add(p1);
+		}
+		
+		
 		while (true) {
 			p = player.get(turn);
 			
@@ -89,7 +94,13 @@ public class Control {
 					} else {
 						System.out.println("블루 키가 필요하다");
 					}
-				} else {
+				}else if (map[p.posX][p.posY].up == 4) {					
+					if(p.level >10) {
+						p.posY--;
+					}else{
+						System.out.println("레벨 10이상만 가능");
+					}
+				}else {
 					System.out.println("못 간다 이놈아");
 				}
 			} else if (input.equals("2")) {
@@ -163,6 +174,19 @@ public class Control {
 			} else if (map[p.posX][p.posY].evetType == 3) {
 				System.out.println("끝");
 				break;
+			}else if(map[p.posX][p.posY].evetType == 4) {
+				System.out.println(map[p.posX][p.posY].name+" 도착");
+				if(p.money >= map[p.posX][p.posY].price ) {
+					System.out.println("땅살래?");
+				}else {
+					System.out.println("거지는 아무것도 못한다");
+				}
+			}else if(map[p.posX][p.posY].evetType == 5) {
+				System.out.println("순간이동 합니다");
+				int x = map[p.posX][p.posY].targetX;
+				int y = map[p.posX][p.posY].targetY;
+				p.posX = x;
+				p.posY = y;
 			}
 
 			turn++;
@@ -173,3 +197,4 @@ public class Control {
 		}
 	}
 }
+

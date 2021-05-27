@@ -1,11 +1,11 @@
-package maze;
-
+package maze2;
 
 
 public class Player {
 	int posX;
 	int posY;
-	
+	int money;
+	int level;
 	String name;
 	boolean redKey;
 	boolean blueKey;
@@ -15,8 +15,5 @@ public class Player {
 		this.posY = posY;
 	}
     
-	public void up() {
-		
-	}
 	
 }

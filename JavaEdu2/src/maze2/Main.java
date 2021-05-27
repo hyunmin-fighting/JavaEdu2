@@ -1,5 +1,4 @@
-package maze;
-
+package maze2;
 
 public class Main {
 
@@ -9,3 +8,4 @@ public class Main {
 	}
 
 }
+

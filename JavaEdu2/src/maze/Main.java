@@ -1,3 +1,4 @@
+package maze;
 
 public class Main {
 
@@ -7,3 +8,4 @@ public class Main {
 	}
 
 }
+

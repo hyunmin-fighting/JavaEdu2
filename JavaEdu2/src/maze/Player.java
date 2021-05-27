@@ -4,6 +4,9 @@ package maze;
 public class Player {
 	int posX;
 	int posY;
+	int money;
+	int level;
+	String name;
 	boolean redKey;
 	boolean blueKey;
 	

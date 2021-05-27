@@ -1,13 +1,31 @@
 package maze;
 
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Control {
 
+	Scanner scan = new Scanner(System.in);
+	Random ran = new Random();
+	int[] ranData = new int[15];
+	boolean[] isDuple = new boolean[20];
+	
 	public void start() {
 		int posX = 2;
 		int posY = 2;
-		Scanner scan = new Scanner(System.in);
+
+		for (int i = 0; i < 15; i++) {
+			int ranValue = ran.nextInt(20);
+			if(!isDuple[ranValue]) {
+				ranData[i] = ranValue;
+				isDuple[ranValue] = true;
+			}
+			else {
+				i--;
+			}
+		}
+//		System.out.println(Arrays.toString(ranData));
 
 		while (true) {
 			
@@ -31,11 +49,15 @@ public class Control {
 	public void print() {
 		System.out.println("[게임판]");
 		for (int i = 1; i <= 25; i++) {
-			System.out.print("___ㅣ ");
+			if(i == 8) {
+				System.out.print("P ");
+			}
+			else {
+				System.out.print("_ ");
+			}			
 			if(i == 5 || i == 10 || i == 15 || i == 20 ) {
 				System.out.println("");
 			}
-			
 		}
 	}
 	

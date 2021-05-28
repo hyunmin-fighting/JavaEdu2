@@ -17,7 +17,7 @@ public class Control {
 				map[i][j] = new Room();
 			}
 		}
-		
+	
 		// 생성된 각각의 Room객체의 문위치 속성 정의(서버로 부터 Data다운 받아 업데이트 영역)
 		// 0:문없음_Default값, 1:일반문, 2:레드문, 3:블루문
 		map[0][0].setRight(1);
@@ -71,7 +71,7 @@ public class Control {
 		while(true) {
 			//현재 순번의 객체를 p 참조변수로 복사
 			Player p = player.get(turn);
-			System.out.println(p.getName() + "님의 현재 위치 : [" + p.getPosX() + "," + p.getPosY() + "]");
+			System.out.println(p.getName() + "님의 이동 전 위치 : [" + p.getPosX() + "," + p.getPosY() + "]");
 			System.out.println(p.getName() + "님, 이동 방향을 선택하세요");
 			System.out.println("1.상, 2.하, 3.좌, 4.우, 5.게임 포기");
 			System.out.print("[입력 >>>] ");
@@ -99,7 +99,6 @@ public class Control {
 				System.out.println(p.getName() + "님이 게임을 승리하였습니다.");
 				break;
 			}
-
 			// 게임Turn 돌리기 
 			turn++;
 			System.out.println("======================================\n");

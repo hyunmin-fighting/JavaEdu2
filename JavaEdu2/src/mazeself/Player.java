@@ -30,7 +30,7 @@ public class Player {
 			//현재 Player가 레드키를 가지고있으면 이동가능..
 			if(isRedKey()) posY--;							
 			//현재 Player가 레드키를 가지고 있지 않으면 이동 불가능..
-			else System.out.println("레드키가 없습니다.");
+			else System.out.println("!!!!!레드키가 없습니다!!!!!");
 		}
 		
 		//이동하는 방향에 블루문이 있으면..
@@ -38,10 +38,10 @@ public class Player {
 			//현재 Player가 블루키를 가지고있으면 이동가능..
 			if(isBlueKey()) posY--;
 			//현재 Player가 블루키를 가지고 있지 않으면 이동 불가능..
-			else System.out.println("블루키가 없습니다.");
+			else System.out.println("!!!!!블루키가 없습니다!!!!!");
 		}
 		
-		else System.out.println("이동할 수 없습니다.");
+		else System.out.println("!!!!!이동할 수 없습니다!!!!!");
 	}
 	
 	//Player행위(메서드)2 : 아래로 이동
@@ -49,15 +49,15 @@ public class Player {
 		if(map[posX][posY].getDown() == 1) posY++;							
 		else if(map[posX][posY].getDown() == 2) {
 			if(isRedKey()) posY++;								
-			else System.out.println("레드키가 없습니다.");
+			else System.out.println("!!!!!레드키가 없습니다!!!!!");
 		}
 		
 		else if(map[posX][posY].getDown() == 3) {
 			if(isBlueKey()) posY++;		
-			else System.out.println("블루키가 없습니다.");
+			else System.out.println("!!!!!블루키가 없습니다!!!!!");
 		}
 		
-		else System.out.println("이동할 수 없습니다.");
+		else System.out.println("!!!!!이동할 수 없습니다!!!!!");
 	}
 	
 	//Player행위(메서드)3 : 왼쪽으로 이동
@@ -65,15 +65,15 @@ public class Player {
 		if(map[posX][posY].getLeft() == 1) posX--;							
 		else if(map[posX][posY].getLeft() == 2) {
 			if(isRedKey()) posX--;								
-			else System.out.println("레드키가 없습니다.");
+			else System.out.println("!!!!!이동할 수 없습니다!!!!!");
 		}
 		
 		else if(map[posX][posY].getLeft() == 3) {
 			if(isBlueKey()) posX--;			
-			else System.out.println("블루키가 없습니다.");
+			else System.out.println("!!!!!블루키가 없습니다!!!!!");
 		}
 		
-		else System.out.println("이동할 수 없습니다.");
+		else System.out.println("!!!!!이동할 수 없습니다!!!!!");
 	}
 	
 	//Player행위(메서드)4 : 오쪽으로 이동
@@ -81,15 +81,15 @@ public class Player {
 		if(map[posX][posY].getRight() == 1) posX++;							
 		else if(map[posX][posY].getRight() == 2) {
 			if(isRedKey()) posX++;								
-			else System.out.println("레드키가 없습니다.");
+			else System.out.println("!!!!!레드키가 없습니다!!!!!");
 		}
 		
 		else if(map[posX][posY].getRight() == 3) {
 			if(isBlueKey()) posX++;			
-			else System.out.println("블루키가 없습니다.");
+			else System.out.println("!!!!!블루키가 없습니다!!!!!");
 		}
 		
-		else System.out.println("이동할 수 없습니다.");
+		else System.out.println("!!!!!이동할 수 없습니다!!!!!");
 	}
 	
 

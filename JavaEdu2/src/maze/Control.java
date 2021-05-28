@@ -62,10 +62,10 @@ public class Control {
 		Scanner scan = new Scanner(System.in);
 		Player p1 = new Player(2, 2);
 		p1.name ="개똥이";
-		Player p2 = new Player(2, 2);
-		p2.name ="소똥이";
+//		Player p2 = new Player(2, 2);
+//		p2.name ="소똥이";
 		player.add(p1);
-		player.add(p2);
+//		player.add(p2);
 		while (true) {
 			p = player.get(turn);
 			

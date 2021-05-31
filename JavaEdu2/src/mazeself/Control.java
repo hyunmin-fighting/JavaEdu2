@@ -73,7 +73,7 @@ public class Control {
 		while(true) {
 			// 현재 순번의 객체를 p 참조변수로 복사
 			Player p = player.get(turn);
-			// 이동 전 좌표
+			// 이동 전 좌표 출력
 			System.out.println("[" + p.getName() + "]님의 이동 전 위치 : [" + p.getPosX() + "," + p.getPosY() + "]");
 			
 			System.out.println("[" + p.getName() + "]님, 이동 방향을 선택하세요");
@@ -89,7 +89,7 @@ public class Control {
 			else if(input.equals("4")) p.moveRight();
 			else if(input.equals("5")) {System.out.println("[" + p.getName() + "]님이 게임을 포기하였습니다."); break;}
 			
-			// 이동 후 좌표
+			// 이동 후 좌표 출력
 			System.out.println("[" + p.getName() + "]님의 이동 후 위치 : [" + p.getPosX() + "," + p.getPosY() + "]");
 			
 			// (이동후 행위_메서드) 

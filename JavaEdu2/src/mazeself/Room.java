@@ -15,12 +15,8 @@ public class Room {
 	//Room속성2 : (이동후)이동후 방의 이벤트 Type (1:영어퀴즈+정답시 1번열쇠 획득, 2:도착시 2번열쇠 획득_레드문 통과시, 3:게임클리어)   
 	private int eventType;
 	
-	//Room속성3 : 현재 게임중인 Player
-	private Player player;
-
 	//Room행위(메서드)1 : Room에 있는 Event 확인 
 	public int checkRoomEvent(Player player) {
-		this.player = player;
 		int getEvent = 0;
 		
 		if(eventType == 1) {

@@ -63,8 +63,8 @@ public class Control {
 		
 		Scanner scan = new Scanner(System.in);
 		// Player 객체 생성 & ArrayList에 추가
-		Player p1 = new Player(2,2,map);
-		Player p2 = new Player(2,2,map);
+		Player p1 = new Player(2,2);
+		Player p2 = new Player(2,2);
 		p1.setName("김현민");
 		p2.setName("김가현");
 		player.add(p1);
@@ -83,10 +83,10 @@ public class Control {
 			
 			// (이동전 행위_메서드) 
 			// Player객체의 move 메서드 호출
-				 if(input.equals("1")) p.moveUp();
-			else if(input.equals("2")) p.moveDown();
-			else if(input.equals("3")) p.moveLeft();
-			else if(input.equals("4")) p.moveRight();
+				 if(input.equals("1")) p.moveUp(map);
+			else if(input.equals("2")) p.moveDown(map);
+			else if(input.equals("3")) p.moveLeft(map);
+			else if(input.equals("4")) p.moveRight(map);
 			else if(input.equals("5")) {System.out.println("[" + p.getName() + "]님이 게임을 포기하였습니다."); break;}
 			
 			// 이동 후 좌표 출력

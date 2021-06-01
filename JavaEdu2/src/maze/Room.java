@@ -2,6 +2,7 @@ package maze;
 
 
 
+
 public class Room {	
 	int up;  // 0 없다 1 일반 2 빨간 3 파란 
 	int down;

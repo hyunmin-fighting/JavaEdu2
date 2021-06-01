@@ -62,10 +62,10 @@ public class Control {
 		Scanner scan = new Scanner(System.in);
 		Player p1 = new Player(2, 2);
 		p1.name ="개똥이";
-//		Player p2 = new Player(2, 2);
-//		p2.name ="소똥이";
+		Player p2 = new Player(2, 2);
+		p2.name ="소똥이";
 		player.add(p1);
-//		player.add(p2);
+		player.add(p2);
 		while (true) {
 			p = player.get(turn);
 			
@@ -75,77 +75,13 @@ public class Control {
 			System.out.println("1. 위  2. 아래 3. 왼  4. 오");
 			String input = scan.nextLine();
 			if (input.equals("1")) {
-				if (map[p.posX][p.posY].up == 1) {
-					p.posY--;
-				} else if (map[p.posX][p.posY].up == 2) {
-					if (p.redKey == true) {
-						p.posY--;
-					} else {
-						System.out.println("레드 키가 필요하다");
-					}
-				} else if (map[p.posX][p.posY].up == 3) {
-					if (p.blueKey == true) {
-						p.posY--;
-					} else {
-						System.out.println("블루 키가 필요하다");
-					}
-				} else {
-					System.out.println("못 간다 이놈아");
-				}
+				p.up(map);
 			} else if (input.equals("2")) {
-				if (map[p.posX][p.posY].down == 1) {
-					p.posY++;
-				} else if (map[p.posX][p.posY].down == 2) {
-					if (p.redKey == true) {
-						p.posY++;
-					} else {
-						System.out.println("레드 키가 필요하다");
-					}
-				} else if (map[p.posX][p.posY].down == 3) {
-					if (p.blueKey == true) {
-						p.posY++;
-					} else {
-						System.out.println("블루 키가 필요하다");
-					}
-				} else {
-					System.out.println("못 간다 이놈아");
-				}
+				p.down(map);
 			} else if (input.equals("3")) {
-				if (map[p.posX][p.posY].left == 1) {
-					p.posX--;
-				} else if (map[p.posX][p.posY].left == 2) {
-					if (p.redKey == true) {
-						p.posX--;
-					} else {
-						System.out.println("레드 키가 필요하다");
-					}
-				} else if (map[p.posX][p.posY].left == 3) {
-					if (p.blueKey == true) {
-						p.posX--;
-					} else {
-						System.out.println("블루 키가 필요하다");
-					}
-				} else {
-					System.out.println("못 간다 이놈아");
-				}
+				p.left(map);
 			} else if (input.equals("4")) {
-				if (map[p.posX][p.posY].right == 1) {
-					p.posX++;
-				} else if (map[p.posX][p.posY].right == 2) {
-					if (p.redKey == true) {
-						p.posX++;
-					} else {
-						System.out.println("레드 키가 필요하다");
-					}
-				} else if (map[p.posX][p.posY].right == 3) {
-					if (p.blueKey == true) {
-						p.posX++;
-					} else {
-						System.out.println("블루 키가 필요하다");
-					}
-				} else {
-					System.out.println("못 간다 이놈아");
-				}
+				p.right(map);
 			} // 이동후
 
 			if (map[p.posX][p.posY].evetType == 1) {
@@ -173,3 +109,4 @@ public class Control {
 		}
 	}
 }
+

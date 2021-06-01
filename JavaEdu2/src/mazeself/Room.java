@@ -16,8 +16,8 @@ public class Room {
 	private int eventType;
 	
 	//Room행위(메서드)1 : Room에 있는 Event 확인 
-	public int checkRoomEvent(Player player) {
-		int getEvent = 0;
+	public boolean checkRoomEvent(Player player) {
+		boolean win = false;
 		
 		if(eventType == 1) {
 			System.out.println("영어퀴즈!");
@@ -26,28 +26,32 @@ public class Room {
 			
 			if(input.equals("apple")) {
 				//정답
-				getEvent = 1;
 				player.setRedKey(true);
+				System.out.println("정답 >> 레드키를 획득하였습니다.");
 			}
 			else {
 				//오답
-				getEvent = -1;
+				System.out.println("오답입니다.");	
 			}	
 		}
 		
 		// B위치 도착 : 블루키 획득
 		else if(eventType == 2) {
-			getEvent = 2;
 			player.setBlueKey(true);
+			System.out.println("블루키를 획득하였습니다.");
 		}
 		
 		// F위치 도착 : 게임 클리어
 		else if(eventType == 3) {
-			getEvent = 3;
+			System.out.println("[" + player.getName() + "]님이 게임을 승리하였습니다.");
+			win = true;
 		}
 		
-		return getEvent;
+		return win;
 	}
+	
+
+	
 	
 	
 	//getter, Setter

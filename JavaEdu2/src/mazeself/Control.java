@@ -94,12 +94,8 @@ public class Control {
 			
 			// (이동후 행위_메서드) 
 			// Room객체의 checkRoomEvent 메서드 호출(player객체를 매개변수로 포함)
-			int getEvent = map[p.getPosX()][p.getPosY()].checkRoomEvent(p);
-			
-				 if(getEvent == -1) System.out.println("오답입니다.");	
-			else if(getEvent == 1) System.out.println("정답 >> 레드키를 획득하였습니다.");
-			else if(getEvent == 2) System.out.println("블루키를 획득하였습니다.");
-			else if(getEvent == 3) {System.out.println("[" + p.getName() + "]님이 게임을 승리하였습니다."); scan.close(); break;}
+			boolean win = map[p.getPosX()][p.getPosY()].checkRoomEvent(p);
+			if(win) break;
 			
 			// 게임Turn 돌리기 
 			turn++;
